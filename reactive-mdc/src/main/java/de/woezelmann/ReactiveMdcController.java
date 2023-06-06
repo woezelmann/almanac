@@ -17,4 +17,10 @@ public class ReactiveMdcController {
 
         return talkingService.sayHello();
     }
+
+    @GetMapping(value = "/reactive-mdc/mute", produces = "text/plain")
+    public Mono<String> sayNothing() {
+
+        return talkingService.sayNothing();
+    }
 }

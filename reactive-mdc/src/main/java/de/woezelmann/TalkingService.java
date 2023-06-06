@@ -15,4 +15,8 @@ public class TalkingService {
         return Mono.just("Hello, world!!!")
                 .doOnEach(logOnNext(s -> logger.info("Controller is saying: {}", s)));
     }
+
+    public Mono<String> sayNothing() {
+        return Mono.error(new MuteException());
+    }
 }

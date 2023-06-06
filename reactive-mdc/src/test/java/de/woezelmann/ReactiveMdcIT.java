@@ -29,4 +29,15 @@ public class ReactiveMdcIT {
                 .expectStatus().is2xxSuccessful()
                 .expectBody(String.class).isEqualTo("Hello, world!!!");
     }
+
+    @Test
+    void testExceptionMapperLoggingWithMdc() {
+        client.get()
+                .uri("/reactive-mdc/mute")
+                .accept(MediaType.TEXT_PLAIN)
+                .header("x-flow-id", UUID.randomUUID().toString())
+                .exchange()
+                .expectStatus().is5xxServerError()
+                .expectBody(String.class).isEqualTo("Computer says no");
+    }
 }
