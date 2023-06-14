@@ -32,6 +32,18 @@
                 <artifactId>embedded-redis</artifactId>
                 <version>0.7.2</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>problem</artifactId>
+                <version>0.27.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>jackson-datatype-problem</artifactId>
+                <version>0.27.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -44,6 +56,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.zalando</groupId>
+            <artifactId>problem</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.zalando</groupId>
+            <artifactId>jackson-datatype-problem</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

@@ -7,6 +7,7 @@ import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
+import org.zalando.problem.jackson.ProblemModule;
 
 @SpringBootApplication
 public class RedisApplication {
@@ -22,5 +23,10 @@ public class RedisApplication {
                         .<String, Customer>newSerializationContext(RedisSerializer.json())
                         .build()
         );
+    }
+
+    @Bean
+    public ProblemModule problemModule() {
+        return new ProblemModule();
     }
 }

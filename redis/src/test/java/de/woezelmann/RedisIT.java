@@ -67,7 +67,9 @@ public class RedisIT {
         client.get()
                 .uri("/customer/{id}", "non-existing")
                 .exchange()
-                .expectStatus().isNotFound();
+                .expectStatus().isNotFound()
+                .expectBody(String.class)
+                .value(System.out::println);
     }
 
     private Map<String, String> createCustomer(String firstName, String lastName) {
