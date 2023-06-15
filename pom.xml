@@ -8,10 +8,12 @@
     <artifactId>almanac</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
         <module>spring-aop</module>
         <module>reactive-mdc</module>
         <module>redis</module>
+        <module>graalvm</module>
     </modules>
 
     <properties>
