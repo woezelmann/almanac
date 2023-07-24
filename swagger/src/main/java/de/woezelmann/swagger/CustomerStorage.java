@@ -18,4 +18,12 @@ public class CustomerStorage {
         customersById.put(newCustomer.id(), customer);
         return Mono.just(customer);
     }
+
+    public Mono<Customer> fetchCustomer(String id) {
+        if (!customersById.containsKey(id)) {
+            return Mono.error(new CustomerException("Could not find customer", 404));
+        }
+
+        return Mono.just(customersById.get(id));
+    }
 }

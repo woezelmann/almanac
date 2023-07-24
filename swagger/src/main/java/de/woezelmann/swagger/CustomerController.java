@@ -14,4 +14,10 @@ public class CustomerController implements CustomerAPI {
     public Mono<Customer> createCustomer(Customer customer) {
         return storage.storeCustomer(customer);
     }
+
+    @Override
+    public Mono<Customer> fetchCustomer(String id) {
+
+        return storage.fetchCustomer(id);
+    }
 }
