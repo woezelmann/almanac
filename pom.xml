@@ -15,6 +15,7 @@
         <module>redis</module>
         <module>graalvm</module>
         <module>swagger</module>
+        <module>http-interface</module>
     </modules>
 
     <properties>

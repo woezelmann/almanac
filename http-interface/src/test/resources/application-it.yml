@@ -1,0 +1,2 @@
+urls:
+  artist-service: http://localhost:${wiremock.server.port}/artist-service
